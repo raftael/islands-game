@@ -64,7 +64,7 @@ An apology in advance as this weekend I had a complicated release from my curren
 - Add more styles
 - Refactor some methods
 
-I appreciate your time and any questions that you have knowledge of.
+I appreciate your time and if you have any questions please let me know.
 
 
 ## 🚀 About Me
