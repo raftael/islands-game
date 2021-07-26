@@ -9,13 +9,13 @@ In order to run the project locally, folow the next steps:
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/raftael/bitso-challenge.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd bitso-challenge
 ```
 
 Install dependencies
@@ -45,7 +45,29 @@ Start the server (production)
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+> Folder structure options and naming conventions for software projects
 
+## Folder structure 
+
+    .
+    ├── components                  # Rect components 
+    ├── pages                       # Html pages 
+    ├── public                      # Builded files
+    ├── styles                      # Custom stylesheets
+    └── README.md
+
+> Use short lowercase names at least for the top-level files and folders except
+> `LICENSE`, `README.md`
+
+##  Relevant Info
+
+An apology in advance as this weekend I had a complicated release from my current job and could not perform the following tasks:
+- Test
+- Form validations
+- Add more styles
+- Refactor some methods
+
+I appreciate your time and any questions that you have knowledge of.
 
 
 ## 🚀 About Me
