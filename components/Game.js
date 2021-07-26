@@ -1,13 +1,30 @@
-import React ,{Component} from 'react'
+import React, { Component } from 'react'
 import Grid from './Grid'
-import styles from '../styles/Home.module.css'
 
 export default class Game extends Component {
-    render() {
-      return (
-        <div>
-            <Grid width={5} height={5} />
-        </div>
-      );
+  constructor(props) {
+    super(props);
+    this.updateGame = this.updateGame.bind(this);
+    this.state = {
+      width: 5, // initial value 
+      height: 5 // initial value
     }
   }
+
+  updateGame(x, y) {
+    this.setState({
+      width: x,
+      height: y
+    });
+  }
+
+  render() {
+    const { width, height } = this.state;
+
+    return (
+      <div>
+        <Grid width={width} height={height} updateGame={this.updateGame} />
+      </div>
+    );
+  }
+}
