@@ -45,8 +45,6 @@ Start the server (production)
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-> Folder structure options and naming conventions for software projects
-
 ## Folder structure 
 
     .
@@ -56,8 +54,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     ├── styles                      # Custom stylesheets
     └── README.md
 
-> Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`
+
 
 ##  Relevant Info
 
