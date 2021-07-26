@@ -5,7 +5,7 @@ export default class Square extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
+            value: 0 // 0: ocean   1: land
         }
     }
 
@@ -16,7 +16,9 @@ export default class Square extends Component {
         this.setState({
             value: newValue
         });
-        this.props.updateBoard(xAxis,yAxis, newValue)
+
+        // update the grid with the new value
+        this.props.updateGrid(xAxis, yAxis, newValue)
 
     }
 
@@ -24,7 +26,7 @@ export default class Square extends Component {
         let backgroundColor = this.state.value === 0 ? 'bg-primary' : 'bg-success';
         return (
             <button className={`${styles.square} ${backgroundColor}`} key={this.props.value} onClick={() => this.updateSquare()}>
-                {''}
+                &nbsp;
             </button>
         )
     }
