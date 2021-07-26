@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import Game from '../components/Game'
 import Image from 'next/image'
-//import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -30,30 +31,9 @@ export default function Home() {
       </nav>
 
       <main className='container'>
-
-        <div class="row">
-          <div class="col">
-            <h2>
-              Islands: 0
-            </h2>
-          </div>
-          <div class="col">
-            <h2>
-              Width: 0
-            </h2>
-          </div>
-          <div class="col">
-            <h2>
-              Height: 0
-            </h2>
-          </div>
-          <div class="col">
-            <button type='button' className='btn btn-primary'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
-                <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
-              </svg>
-              Change grid size
-            </button>
+        <div className="row">
+          <div className="col">
+            <Game />
           </div>
         </div>
 
