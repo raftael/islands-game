@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import {useGameContext} from '../context/GameContext'
+import {Types} from '../context/GameReducer'
+
 let Modal;
 if (typeof window !== 'undefined') {
     Modal = require('bootstrap');
 }
 
 export default function Info(props) {
+    const {state, dispatch} = useGameContext();     
+    const { islands, width, height } = state;
     const [newHeight, setNewHeight] = useState(0);
     const [newWidth, setNewWidth] = useState(0);
-    const { islands, width, height } = props;
 
     return (
         <>
@@ -60,7 +64,7 @@ export default function Info(props) {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => props.updateGridSize(newWidth, newHeight)}>Update</button>
+                                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => dispatch({ type: Types.UPDATE_GRID_SIZE, value: {width: newWidth, height: newHeight}})}>Update</button>
                                     </div>
                                 </div>
                             </form>

@@ -1,9 +1,11 @@
-// add bootstrap css
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/Home.module.css'
+import { GameContextWrapper } from '../context/GameContext';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <GameContextWrapper>
+      <Component {...pageProps} />
+    </GameContextWrapper>
+  )
 }
-
-export default MyApp

@@ -1,41 +1,19 @@
-import React, { Component } from 'react'
 import styles from '../styles/Home.module.css'
-export default class Cell extends Component {
+import { useGameContext } from '../context/GameContext';
+import { Types } from '../context/GameReducer'
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: props.value // 0: ocean  1: land
-        }
+export default function Cell(props) {
+    const { dispatch } = useGameContext();
+    let backgroundColor = props.value === 0 ? 'bg-primary' : 'bg-success';
+
+    function handleClick() {
+        let newValue = props.value === 0 ? 1 : 0
+        dispatch({ type: Types.UPDATE_GRID_CELL_VALUE, value: { i: props.i, j: props.j, updatedValue: newValue } })
     }
 
-    // TODO : refactor this method to getDerivedStateFromProps
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if (nextProps.value !== this.props.value) {
-            this.setState({
-                value: nextProps.value
-            })
-        }
-    }
-
-    updateCell() {
-        const { xAxis, yAxis } = this.props;
-        let newValue = this.state.value === 0 ? 1 : 0
-
-        this.setState({
-            value: newValue
-        });
-
-        // update the grid with the new value
-        this.props.updateGrid(xAxis, yAxis, newValue)
-    }
-
-    render() {
-        let backgroundColor = this.state.value === 0 ? 'bg-primary' : 'bg-success';
-        return (
-            <button className={`${styles.square} ${backgroundColor}`} key={this.props.value} onClick={() => this.updateCell()}>
-                &nbsp;
-            </button>
-        )
-    }
+    return (
+        <button className={`${styles.square} ${backgroundColor}`} key={props.value} onClick={handleClick}>
+            &nbsp;
+        </button>
+    )
 }

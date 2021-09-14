@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Game from '../components/Game'
 
+
 export default function Home() {
+
   // TODO: create a layer component to reuse 
   return (
     <div>
