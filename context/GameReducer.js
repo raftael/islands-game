@@ -12,21 +12,21 @@ export const GameReducer = (state, action) => {
     switch (action.type) {
         case Types.CREATE_GRID:
         case Types.UPDATE_GRID:
+            console.log('action: CREATE_GRID/UPDATE_GRID')
             return {
                 ...state,
                 grid: action.grid
             }
         case Types.UPDATE_GRID_CELL_VALUE:
-            const { i, j, updatedValue } = action.value
-            const updatedArr = state.grid;
-            updatedArr[i][j] = updatedValue
-            const cloneGrid = cloneDeep(updatedArr);
+            console.log('action: UPDATE_GRID_CELL_VALUE value: ' + action.value.updatedValue )
+            const { i, j, updatedValue } = action.value            
+            state.grid[i][j] = updatedValue            
             return {
                 ...state,
-                grid: updatedArr,
-                islands: getIslands(cloneGrid)
+                grid: state.grid,                
             }
         case Types.UPDATE_GRID_SIZE:
+            console.log('action: UPDATE_GRID_SIZE')
             return {
                 ...state,
                 width: action.value.width,
@@ -34,10 +34,12 @@ export const GameReducer = (state, action) => {
                 grid: createGrid(action.value.width, action.value.height),
                 islands: 0
             }
-        case Types.UPDATE_ISLANDS:
+        case Types.CALCULATE_ISLANDS:
+            console.log('action: CALCULATE_ISLANDS')            
+            const cloneGrid = cloneDeep(state.grid);
             return {
                 ...state,
-                islands: action.value
+                islands: getIslands(cloneGrid)
             }
         default:
             return state;
@@ -49,5 +51,5 @@ export const Types = {
     UPDATE_GRID: 'UPDATE_GRID',
     UPDATE_GRID_SIZE: 'UPDATE_GRID_SIZE',
     UPDATE_GRID_CELL_VALUE: 'UPDATE_GRID_CELL_VALUE',
-    UPDATE_ISLANDS: 'UPDATE_ISLANDS',
+    CALCULATE_ISLANDS: 'CALCULATE_ISLANDS',
 }

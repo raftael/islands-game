@@ -14,7 +14,7 @@ export default function Grid() {
     return (
         <>
             <Info width={width} height={height} islands={islands} />
-            <div className='container-fluid my-5'>
+            <div className='container-fluid my-5' data-testid="grid">
                 {grid.map((items, index) => {
                     return (
                         <div className="row g-0" key={index}>
