@@ -1,6 +1,6 @@
-#Bitso Challenge
+#Islands Game
 
-This is the Bitso Challenge project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the Islands game project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -9,13 +9,13 @@ In order to run the project locally, folow the next steps:
 Clone the project
 
 ```bash
-  git clone https://github.com/raftael/bitso-challenge.git
+  git clone https://github.com/raftael/islands-game.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd bitso-challenge
+  cd islands-game
 ```
 
 Install dependencies
@@ -48,27 +48,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Folder structure 
 
     .
+    ├── __tests___                  # unit test 
     ├── components                  # Rect components 
     ├── pages                       # Html pages 
     ├── public                      # Builded files
     ├── styles                      # Custom stylesheets
+    ├── contexts                    # React context and reducers 
     └── README.md
 
 
 
-##  Relevant Info
-
-An apology in advance as this weekend I had a complicated release from my current job and could not perform the following tasks:
-- Test
-- Form validations
-- Add more styles
-- Refactor some methods
-
-I appreciate your time and if you have any questions please let me know.
-
-
 ## 🚀 About Me
 
-Any doubts please let me know 
+Software Developer at Softtek
 
 rafael.romang@gmail.com
+[Linkedin](https://www.linkedin.com/in/rromang/)
