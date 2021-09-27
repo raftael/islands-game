@@ -66,11 +66,4 @@ describe('Validating modal is showing', () => {
         expect(screen.getByTestId('modal-dialog')).toBeInTheDocument
         
     });
-
-    // test("reren der with different islands: 1", () => {
-    //     const { queryByText, rerender } = render(<Info islands="0" width="5" height="5" />);
-    //     expect(queryByText(/Islands: 0/i)).toBeTruthy()
-    //     rerender(<Info islands={1} width={3} height={3} />)
-    //     expect(queryByText(/Islands: 1/i)).toBeTruthy()
-    // });
 });
